@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "lib": ["es2021", "dom"],
+        "strict": true,
+        "alwaysStrict": true,
+        "target": "es2017",
+        "incremental": true,
+        "outDir": "out/",
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": ["./src"]
+    
+}
