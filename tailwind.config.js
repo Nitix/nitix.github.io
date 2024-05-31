@@ -1,23 +1,16 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.html'],
-  },
-  mode: 'jit',
-  darkMode: 'media', // or 'media' or 'class'
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       screens: {
-        'print': {'raw': 'print'},
+        print: { raw: "print" },
         // => @media print { ... }
       },
       fontFamily: {
-        'manuscrit': '"Alex Brush"',
-      }
+        manuscrit: '"Alex Brush"',
+      },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

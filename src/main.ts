@@ -1,7 +1,6 @@
-import "./main.css"
-import Konami from 'konami-ramen';
+import Konami from "konami-ramen";
 
-let konami = new Konami(undefined, undefined, undefined, true);
+let konami = new Konami();
 
 console.log(`Vous connaissez le devtools ?
 
@@ -29,29 +28,28 @@ Ah non c'est vrai je postule. 🤷‍♂️`);
   \/____/   \/_____/   \/_/        \/_/   \/_____/   \/_____/   \/_____/   \/_____/
 */
 
-
-konami.on('success', () => {
-    document.body.setAttribute('contentEditable', "true");
+konami.on("success", () => {
+  document.body.setAttribute("contentEditable", "true");
 });
 
-konami.on('input', (event: KonamiInputEvent) => {
-    if (event.match && event.key === 'a') {
-        document.body.classList.add("shake")
-        setTimeout(() => {
-            document.body.classList.remove("shake")
-        }, 500);
-    } else {
-        if (event.match) {
-            console.log('Something is happening ' + '!'.repeat(event.position + 1));
-        }
+konami.on("input", (event: KonamiInputEvent) => {
+  if (event.match && event.key === "a") {
+    document.body.classList.add("shake");
+    setTimeout(() => {
+      document.body.classList.remove("shake");
+    }, 500);
+  } else {
+    if (event.match) {
+      console.log("Something is happening " + "!".repeat(event.position + 1));
     }
-})
+  }
+});
 
 konami.start();
 
 interface KonamiInputEvent {
-    key: string,
-    match: boolean,
-    position: number,
-    keyboardEvent: KeyboardEvent
+  key: string;
+  match: boolean;
+  position: number;
+  keyboardEvent: KeyboardEvent;
 }
