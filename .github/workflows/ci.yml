@@ -13,7 +13,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-          npm build
+          npm run build
 
       - name: Compress artifacts 🗜️
         run: tar -czf github-pages.tar.gz dist
