@@ -10,10 +10,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        run: |
-          npm ci
-          npm run build
+      - name: Install dependencies 🔧
+        run: npm ci
+
+      - name: Build and Minify HTML 🛠️
+        run: npx html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o dist/index.html index.html
 
       - name: Upload pages artifacts 🚀
         uses: actions/upload-pages-artifact@v3
