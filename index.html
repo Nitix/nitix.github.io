@@ -616,96 +616,151 @@
             body {
                 padding: 0;
                 font-size: 10pt;
-                background: #fff !important; /* Ensure override */
-                color: #000 !important; /* Ensure override */
+                background: #fff; /* Ensure override */
+                color: #000; /* Ensure override */
             }
             
-            .skip-link, .bg-decoration, .footer { display: none !important; }
+            .skip-link, .bg-decoration, .footer { display: none; }
             
             .container {
-                box-shadow: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                max-width: 100% !important;
-                border-radius: 0 !important;
-                backdrop-filter: none !important;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+                border-radius: 0;
+                backdrop-filter: none;
             }
             
-            .container::before { display: none !important; }
+            .container::before { display: none; }
             
-            .header { margin-bottom: 1.5rem; opacity: 1 !important; animation: none !important; }
+            .header { margin-bottom: 1.5rem; opacity: 1; animation: none; }
             
             .header h1 {
-                font-size: 1.8rem !important;
-                color: #000 !important;
-                background: none !important;
-                -webkit-text-fill-color: initial !important;
+                font-size: 1.8rem;
+                color: #000;
+                background: none;
+                -webkit-text-fill-color: initial;
             }
              .profile-pic {
-                box-shadow: none !important;
-                padding: 2px !important;
+                box-shadow: none;
+                padding: 2px;
                 border: 1px solid #ccc;
             }
-            .profile-pic::after { display: none !important; }
+            .profile-pic::after { display: none; }
 
-            .job-title::after { background: #ccc !important; }
+            .job-title::after { background: #ccc; }
+
+            .contact-details {
+                display: block;
+            }
+
+            .contact-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
 
             .contact-item {
-                color: #333 !important;
-                background: none !important;
-                padding: 0.2rem !important;
-                border: 1px solid #eee !important;
-                box-shadow: none !important;
+                color: #000;
+                background: none;
+                padding: 0.2rem 0.5rem;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                transform: none;
+                flex: none;
+                font-size: 9pt;
+                white-space: nowrap;
             }
-            .contact-item .icon { filter: none !important; }
             
-            a[href^="http"]::after {
+            .contact-item .icon { 
+                filter: none; 
+                margin-right: 0.3rem;
+            }
+            
+            /* Amélioration de l'affichage des liens */
+            .contact-item[href^="mailto:"]::after {
+                content: none;
+            }
+            
+            .contact-item[href^="tel:"]::after {
+                content: none;
+            }
+            
+            /* Affichage des URLs complètes pour LinkedIn et Marmelab */
+            .contact-item[href*="linkedin.com"] {
+                font-size: 0;
+            }
+            
+            .contact-item[href*="linkedin.com"] .icon {
+                font-size: 9pt;
+                margin-right: 0.3rem;
+            }
+            
+            .contact-item[href*="linkedin.com"]::after { 
+                content: attr(href);
+                font-size: 9pt;
+                color: #000;
+                font-weight: normal;
+            }
+            
+            .contact-item[href*="marmelab.com"] {
+                font-size: 0;
+            }
+            
+            .contact-item[href*="marmelab.com"] .icon {
+                font-size: 9pt;
+                margin-right: 0.3rem;
+            }
+            
+            .contact-item[href*="marmelab.com"]::after { 
+                content: attr(href);
+                font-size: 9pt;
+                color: #000;
+                font-weight: normal;
+            }
+            
+            /* Suppression de la règle qui masquait les icônes */
+            
+            .section a[href^="http"]:not(.contact-item)::after {
                 content: " (" attr(href) ")";
                 font-size: 0.8em;
                 color: #555;
             }
-             a[href^="mailto:"]::after {
-                content: " (" attr(href) ")";
-                font-size: 0.8em;
-                color: #555;
-            }
-            a.contact-item[href*="linkedin.com"]::after { content: " (LinkedIn Profile)"; }
-            a.contact-item[href*="marmelab.com"]::after { content: " (Marmelab Blog)"; }
-
             
-            .section { opacity: 1 !important; animation: none !important; margin-bottom: 1.5rem !important;}
-            .section h2 { color: #000 !important; }
-            .section h2::after, .section h2::before { display: none !important; }
+            .section { opacity: 1; animation: none; margin-bottom: 1.5rem;}
+            .section h2 { color: #000; }
+            .section h2::after, .section h2::before { display: none; }
             
             .entry {
-                background: none !important;
-                border: 1px solid #ddd !important;
-                padding: 0.5rem !important;
-                box-shadow: none !important;
-                transform: none !important;
+                background: none;
+                border: 1px solid #ddd;
+                padding: 0.5rem;
+                box-shadow: none;
+                transform: none;
             }
-             .entry::before { display: none !important; }
+             .entry::before { display: none; }
 
             .skill-tag {
-                background: #e0e0e0 !important;
-                color: #000 !important;
-                border: 1px solid #c0c0c0 !important;
-                padding: 0.3rem 0.6rem !important;
-                box-shadow: none !important;
-                transform: none !important;
+                background: #e0e0e0;
+                color: #000;
+                border: 1px solid #c0c0c0;
+                padding: 0.3rem 0.6rem;
+                box-shadow: none;
+                transform: none;
             }
-            .skill-tag::before { display: none !important; }
+            .skill-tag::before { display: none; }
             
-            .key-skills { display: none !important; }
-            .progress-bar-container, .progress-fill { display: none !important; }
+            .key-skills { display: none; }
+            .progress-bar-container, .progress-fill { display: none; }
         }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
+                animation-duration: 0.01ms;
+                animation-iteration-count: 1;
+                transition-duration: 0.01ms;
+                scroll-behavior: auto;
             }
             .header, .section { opacity: 1; transform: none; }
             .floating-shape { display: none; } 
