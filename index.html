@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guillaume Pierson - Senior Full Stack Developer</title>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
       :root {
         --primary: #2563eb;
         --primary-light: #3b82f6;
@@ -43,25 +44,22 @@
 
       * {
         box-sizing: border-box;
-        margin: 0; /* Added to reset default margins */
-        padding: 0; /* Added to reset default paddings */
+        margin: 0;
+        padding: 0;
       }
-
       *:focus-visible {
-        /* More specific focus for keyboard users */
         outline: 2px solid var(--primary);
         outline-offset: 2px;
       }
 
       body {
         font-family: "Inter", sans-serif;
-        margin: 0;
         padding: 1rem;
+        overflow-x: hidden;
         background: linear-gradient(135deg, var(--bg-alt) 0%, #f1f5f9 100%);
         color: var(--text);
         line-height: 1.6;
-        transition: background 0.3s ease, color 0.3s ease; /* Simplified transition */
-        overflow-x: hidden;
+        transition: all 0.3s ease;
       }
 
       @media (prefers-color-scheme: dark) {
@@ -70,26 +68,6 @@
         }
       }
 
-      /* Accessibility: Skip Link */
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--primary);
-        color: white;
-        padding: 8px;
-        z-index: 10000; /* Ensure it's on top */
-        transition: top 0.3s ease-in-out;
-        text-decoration: none;
-        border-bottom-right-radius: 8px;
-      }
-
-      .skip-link:focus {
-        top: 0;
-        outline: none; /* Custom focus already handled by *:focus-visible */
-      }
-
-      /* Floating elements background */
       .bg-decoration {
         position: fixed;
         top: 0;
@@ -106,7 +84,6 @@
         opacity: 0.03;
         animation: float 20s infinite ease-in-out;
       }
-
       .floating-shape:nth-child(1) {
         width: 300px;
         height: 300px;
@@ -115,7 +92,6 @@
         left: -10%;
         animation-delay: 0s;
       }
-
       .floating-shape:nth-child(2) {
         width: 200px;
         height: 200px;
@@ -124,7 +100,6 @@
         right: -5%;
         animation-delay: -7s;
       }
-
       .floating-shape:nth-child(3) {
         width: 150px;
         height: 150px;
@@ -157,22 +132,6 @@
         transition: all 0.3s ease;
       }
 
-      .container::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle,
-          rgba(37, 99, 235, 0.03) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-
-      /* Header */
       .header {
         display: flex;
         flex-direction: column;
@@ -194,13 +153,11 @@
         transition: all 0.3s ease;
         position: relative;
       }
-
       .profile-pic:hover,
       .profile-pic:focus-within {
         transform: scale(1.05) rotate(2deg);
         box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
       }
-
       .profile-pic::after {
         content: "";
         position: absolute;
@@ -211,7 +168,6 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-
       .profile-pic:hover::after,
       .profile-pic:focus-within::after {
         opacity: 0.2;
@@ -238,7 +194,7 @@
         height: 100%;
         border-radius: 50%;
         object-fit: cover;
-        display: block; /* Prevents small space below image */
+        display: block;
       }
 
       .header h1 {
@@ -261,7 +217,6 @@
         position: relative;
         min-height: 2rem;
       }
-
       .job-title::after {
         content: "";
         position: absolute;
@@ -281,7 +236,6 @@
         list-style: none;
         padding: 0;
       }
-
       .contact-row {
         display: flex;
         justify-content: center;
@@ -309,7 +263,6 @@
         margin-right: 0.5em;
         filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.3));
       }
-
       .contact-item::before {
         content: "";
         position: absolute;
@@ -325,16 +278,14 @@
         );
         transition: left 0.5s ease;
       }
-
       .contact-item:hover,
       .contact-item:focus {
         color: var(--primary);
         background: rgba(37, 99, 235, 0.1);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        outline: none; /* Custom focus already handled */
+        outline: none;
       }
-
       .contact-item:hover::before,
       .contact-item:focus::before {
         left: 100%;
@@ -345,7 +296,6 @@
         opacity: 0;
         animation: fadeInUp 0.8s ease forwards;
       }
-
       .section:nth-of-type(1) {
         animation-delay: 0.2s;
       }
@@ -373,7 +323,6 @@
         position: relative;
         padding-bottom: 0.75rem;
       }
-
       .section h2::after {
         content: "";
         position: absolute;
@@ -384,7 +333,6 @@
         background: var(--primary-gradient);
         border-radius: 2px;
       }
-
       .section h2::before {
         content: "";
         position: absolute;
@@ -401,9 +349,7 @@
         font-weight: 600;
         color: var(--text);
         margin: 0 0 0.5rem 0;
-        position: relative;
       }
-
       .section h4 {
         font-size: 1.1rem;
         font-weight: 600;
@@ -426,7 +372,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .entry::before {
         content: "";
         position: absolute;
@@ -437,14 +382,12 @@
         background: var(--accent-gradient);
         transition: height 0.3s ease;
       }
-
       .entry:hover,
       .entry:focus-within {
         background: var(--entry-bg-hover);
         transform: translateX(5px);
         box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
       }
-
       .entry:hover::before,
       .entry:focus-within::before {
         height: 100%;
@@ -459,7 +402,6 @@
         align-items: center;
         gap: 0.5rem;
       }
-
       .date-location::before {
         content: "📅";
         filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.3));
@@ -470,7 +412,6 @@
         padding: 0;
         margin: 1rem 0 0 0;
       }
-
       li {
         margin-bottom: 0.75rem;
         color: var(--text);
@@ -478,11 +419,9 @@
         padding-left: 1.5rem;
         transition: transform 0.2s ease;
       }
-
       li:hover {
         transform: translateX(3px);
       }
-
       li::before {
         content: "▸";
         position: absolute;
@@ -492,12 +431,10 @@
         font-weight: bold;
         transition: color 0.3s ease;
       }
-
       li:hover::before {
         color: var(--accent);
       }
 
-      /* Skills */
       .skills-container {
         display: flex;
         flex-wrap: wrap;
@@ -518,7 +455,6 @@
         cursor: default;
         list-style-type: none;
       }
-
       .skill-tag::before {
         content: "";
         position: absolute;
@@ -534,7 +470,6 @@
         );
         transition: left 0.5s;
       }
-
       .skill-tag:hover,
       .skill-tag:focus {
         transform: translateY(-3px) scale(1.05);
@@ -542,7 +477,6 @@
         background: var(--primary-light);
         outline: none;
       }
-
       .skill-tag:hover::before,
       .skill-tag:focus::before {
         left: 100%;
@@ -562,7 +496,6 @@
         border-radius: 12px;
         transition: all 0.3s ease;
       }
-
       .skill-progress:hover,
       .skill-progress:focus-within {
         transform: translateY(-2px);
@@ -590,7 +523,6 @@
         transition: width 1s ease;
         position: relative;
       }
-
       .progress-fill::after {
         content: "";
         position: absolute;
@@ -616,7 +548,6 @@
         }
       }
 
-      /* Footer */
       .footer {
         text-align: center;
         margin-top: 3rem;
@@ -626,7 +557,6 @@
         color: var(--text-light);
         position: relative;
       }
-
       .footer::before {
         content: "";
         position: absolute;
@@ -636,12 +566,6 @@
         width: 100px;
         height: 1px;
         background: var(--primary-gradient);
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
       }
 
       @keyframes fadeInUp {
@@ -696,35 +620,25 @@
         body {
           padding: 0;
           font-size: 10pt;
-          background: #fff; /* Ensure override */
-          color: #000; /* Ensure override */
+          background: #fff;
+          color: #000;
         }
-
-        .skip-link,
         .bg-decoration,
         .footer {
           display: none;
         }
-
         .container {
           box-shadow: none;
           padding: 0;
           margin: 0;
           max-width: 100%;
           border-radius: 0;
-          backdrop-filter: none;
         }
-
-        .container::before {
-          display: none;
-        }
-
         .header {
           margin-bottom: 1.5rem;
           opacity: 1;
           animation: none;
         }
-
         .header h1 {
           font-size: 1.8rem;
           color: #000;
@@ -736,25 +650,22 @@
           padding: 2px;
           border: 1px solid #ccc;
         }
-        .profile-pic::after {
+        .profile-pic::after,
+        .job-title::after {
           display: none;
         }
-
         .job-title::after {
           background: #ccc;
         }
-
         .contact-details {
           display: block;
         }
-
         .contact-row {
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
           margin-bottom: 0.5rem;
         }
-
         .contact-item {
           color: #000;
           background: none;
@@ -766,62 +677,35 @@
           font-size: 9pt;
           white-space: nowrap;
         }
-
         .contact-item .icon {
           filter: none;
           margin-right: 0.3rem;
         }
-
-        /* Amélioration de l'affichage des liens */
-        .contact-item[href^="mailto:"]::after {
-          content: none;
-        }
-
+        .contact-item[href^="mailto:"]::after,
         .contact-item[href^="tel:"]::after {
           content: none;
         }
-
-        /* Affichage des URLs complètes pour LinkedIn et Marmelab */
-        .contact-item[href*="linkedin.com"] {
-          font-size: 0;
-        }
-
-        .contact-item[href*="linkedin.com"] .icon {
-          font-size: 9pt;
-          margin-right: 0.3rem;
-        }
-
-        .contact-item[href*="linkedin.com"]::after {
-          content: attr(href);
-          font-size: 9pt;
-          color: #000;
-          font-weight: normal;
-        }
-
+        .contact-item[href*="linkedin.com"],
         .contact-item[href*="marmelab.com"] {
           font-size: 0;
         }
-
+        .contact-item[href*="linkedin.com"] .icon,
         .contact-item[href*="marmelab.com"] .icon {
           font-size: 9pt;
           margin-right: 0.3rem;
         }
-
+        .contact-item[href*="linkedin.com"]::after,
         .contact-item[href*="marmelab.com"]::after {
           content: attr(href);
           font-size: 9pt;
           color: #000;
           font-weight: normal;
         }
-
-        /* Suppression de la règle qui masquait les icônes */
-
         .section a[href^="http"]:not(.contact-item)::after {
           content: " (" attr(href) ")";
           font-size: 0.8em;
           color: #555;
         }
-
         .section {
           opacity: 1;
           animation: none;
@@ -834,7 +718,6 @@
         .section h2::before {
           display: none;
         }
-
         .entry {
           background: none;
           border: 1px solid #ddd;
@@ -845,7 +728,6 @@
         .entry::before {
           display: none;
         }
-
         .skill-tag {
           background: #e0e0e0;
           color: #000;
@@ -857,10 +739,7 @@
         .skill-tag::before {
           display: none;
         }
-
-        .key-skills {
-          display: none;
-        }
+        .key-skills,
         .progress-bar-container,
         .progress-fill {
           display: none;
@@ -890,11 +769,9 @@
         .skill-tag {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
-
         .entry {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
-
         .container {
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
@@ -902,8 +779,6 @@
     </style>
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
     <div class="bg-decoration">
       <div class="floating-shape"></div>
       <div class="floating-shape"></div>
@@ -1185,7 +1060,6 @@
         threshold: 0.3,
         rootMargin: "0px 0px -50px 0px",
       };
-
       const observerCallback = (entries, observerInstance) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -1194,12 +1068,10 @@
             progressBars.forEach((bar) => {
               const targetWidth = bar.style.width;
               const progressBarContainer = bar.parentElement;
-
               bar.style.width = "0%";
               if (progressBarContainer.getAttribute("role") === "progressbar") {
                 progressBarContainer.setAttribute("aria-valuenow", "0");
               }
-
               setTimeout(() => {
                 bar.style.width = targetWidth;
                 if (
@@ -1221,11 +1093,8 @@
         observerCallback,
         observerOptions
       );
-
       const keySkillsSection = document.querySelector(".key-skills");
-      if (keySkillsSection) {
-        intersectionObserver.observe(keySkillsSection);
-      }
+      if (keySkillsSection) intersectionObserver.observe(keySkillsSection);
 
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         window.addEventListener(
@@ -1233,17 +1102,9 @@
           () => {
             const scrolled = window.pageYOffset;
             const shapes = document.querySelectorAll(".floating-shape");
-
             shapes.forEach((shape, index) => {
               const speed = 0.1 + index * 0.05;
               const yPosParallax = -(scrolled * speed);
-
-              const computedStyle = getComputedStyle(shape);
-              const matrix = new DOMMatrix(computedStyle.transform);
-              const currentRotate =
-                Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
-              const currentX = matrix.m41;
-
               shape.style.transform = `translateY(${yPosParallax}px)`;
             });
           },
@@ -1257,13 +1118,11 @@
           if (href === "#" || href === "#main-content") {
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
-
             if (targetElement) {
               e.preventDefault();
               const prefersReducedMotion = window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
               ).matches;
-
               targetElement.scrollIntoView({
                 behavior: prefersReducedMotion ? "auto" : "smooth",
                 block: "start",
@@ -1281,7 +1140,6 @@
         const originalText = jobTitleElement.textContent;
         jobTitleElement.textContent = "";
         let charIndex = 0;
-
         const typeWriterEffect = () => {
           if (charIndex < originalText.length) {
             jobTitleElement.textContent += originalText.charAt(charIndex);
@@ -1289,7 +1147,6 @@
             setTimeout(typeWriterEffect, 50 + Math.random() * 50);
           }
         };
-
         setTimeout(typeWriterEffect, 1000);
       }
     </script>
